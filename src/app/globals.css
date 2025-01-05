@@ -3,25 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: 240 100% 10%;
+  --foreground: 0 0% 100%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000033;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4B0082;
+  border-radius: 6px;
+  border: 3px solid #000033;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5B0092;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4B0082 #000033;
+}
+
+/* Ensure the page has enough content to scroll */
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden;
 }
