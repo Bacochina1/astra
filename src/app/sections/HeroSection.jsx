@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import SplineAnim from "./components/Spline";
 import { Phone, BookOpen, ArrowRight, Zap, Shield, Rocket } from "lucide-react";
 
-
 // StarBorder Component
 const StarBorder = ({
   as: Component = "button",
@@ -44,7 +43,6 @@ const StarBorder = ({
 };
 
 export default function Hero() {
- 
   return (
     <>
       <style jsx>{`
@@ -123,8 +121,8 @@ export default function Hero() {
 
       <div className="relative min-h-screen overflow-hidden bg-[#000033]">
         {/* Spline Background - Otimizado para Mobile */}
-  
-          <SplineAnim />
+
+        <SplineAnim />
 
         {/* Content */}
         <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">

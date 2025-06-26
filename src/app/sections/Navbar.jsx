@@ -1,46 +1,46 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
-    
+
     // Cleanup on unmount
     return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isMenuOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
-  const menuItems = ["Sobre Nós", "Nossos Projetos", "História"]
+  const menuItems = ["Sobre Nós", "Nossos Projetos", "História"];
 
   return (
     <>
@@ -56,19 +56,23 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="relative w-28 h-7 md:w-32 md:h-8">
-              <Image 
-                src="/logo.svg" 
-                alt="Astrahus Logo" 
-                fill 
-                className="object-contain" 
-                priority 
+              <Image
+                src="/logo.svg"
+                alt="Astrahus Logo"
+                fill
+                className="object-contain"
+                priority
               />
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {menuItems.map((item, index) => (
-                <motion.div key={item} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                <motion.div
+                  key={item}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <Link
                     href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
                     className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
@@ -153,14 +157,13 @@ export default function Navbar() {
               {/* Menu Header */}
               <div className="flex items-center justify-between p-6 border-b border-white/10">
                 <div className="relative w-24 h-6">
-                  <Image 
-                    src="/logo.svg" 
-                    alt="Astrahus Logo" 
-                    fill 
-                    className="object-contain" 
+                  <Image
+                    src="/logo.svg"
+                    alt="Astrahus Logo"
+                    fill
+                    className="object-contain"
                   />
                 </div>
-                
               </div>
 
               {/* Menu Items */}
@@ -171,11 +174,11 @@ export default function Navbar() {
                       key={item}
                       initial={{ x: 50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
-                      transition={{ 
+                      transition={{
                         delay: index * 0.1 + 0.2,
                         type: "spring",
                         stiffness: 200,
-                        damping: 20
+                        damping: 20,
                       }}
                     >
                       <Link
@@ -194,7 +197,12 @@ export default function Navbar() {
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.6, type: "spring", stiffness: 200, damping: 20 }}
+                  transition={{
+                    delay: 0.6,
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 20,
+                  }}
                   className="mt-12"
                 >
                   <button
@@ -209,13 +217,20 @@ export default function Navbar() {
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.8, type: "spring", stiffness: 200, damping: 20 }}
+                  transition={{
+                    delay: 0.8,
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 20,
+                  }}
                   className="mt-12 pt-8 border-t border-white/10"
                 >
                   <div className="text-center">
-                    <p className="text-gray-300 text-sm mb-2">Precisa de ajuda?</p>
-                    <a 
-                      href="mailto:contato@astrahus.com" 
+                    <p className="text-gray-300 text-sm mb-2">
+                      Precisa de ajuda?
+                    </p>
+                    <a
+                      href="mailto:contato@astrahus.com"
                       className="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors duration-200"
                       onClick={closeMenu}
                     >
@@ -229,5 +244,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

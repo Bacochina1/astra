@@ -3,8 +3,6 @@ import Hero from "./sections/HeroSection";
 import { Suspense } from "react";
 import Loading from "./sections/components/Loading";
 
-// Loading Component
-
 export default function Home() {
   return (
     <div className="bg-black">
