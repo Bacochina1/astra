@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Spline from "@splinetool/react-spline/next";
+import SplineAnim from "./components/Spline";
 import { Phone, BookOpen, ArrowRight, Zap, Shield, Rocket } from "lucide-react";
-import { useEffect, useState } from "react";
+
 
 // StarBorder Component
 const StarBorder = ({
@@ -44,18 +44,7 @@ const StarBorder = ({
 };
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
+ 
   return (
     <>
       <style jsx>{`
@@ -134,14 +123,8 @@ export default function Hero() {
 
       <div className="relative min-h-screen overflow-hidden bg-[#000033]">
         {/* Spline Background - Otimizado para Mobile */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Spline
-            className=""
-            scene="https://prod.spline.design/EBeZQyvaIksy4qvx/scene.splinecode"
-          />
-          {/* Enhanced overlay with gradient - Mais forte no mobile */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#000033]/100 via-[#4B0082]/30 to-[#000033]/90 md:from-[#000033]/60 md:via-[#4B0082]/20 md:to-[#000033]/100" />
-        </div>
+  
+          <SplineAnim />
 
         {/* Content */}
         <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
@@ -170,12 +153,12 @@ export default function Hero() {
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wide mb-6 md:mb-8 leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wide mb-6 md:mb-8 "
                 >
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white">
                     Escalamos produtos.
                   </span>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 mt-1 md:mt-2 font-bold">
+                  <span className="block text-transparent tracking-normal bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 mt-1  font-bold">
                     Fortalecemos projetos.
                   </span>
                 </motion.h1>
