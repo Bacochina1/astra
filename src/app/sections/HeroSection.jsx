@@ -135,9 +135,9 @@ export default function Hero() {
       <div className="relative min-h-screen overflow-hidden bg-[#000033]">
         {/* Spline Background - Otimizado para Mobile */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <Spline scene="https://prod.spline.design/EBeZQyvaIksy4qvx/scene.splinecode" />
+          <Spline className='' scene="https://prod.spline.design/EBeZQyvaIksy4qvx/scene.splinecode" />
           {/* Enhanced overlay with gradient - Mais forte no mobile */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#000033]/70 via-[#4B0082]/30 to-[#000033]/90 md:from-[#000033]/60 md:via-[#4B0082]/20 md:to-[#000033]/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#000033]/100 via-[#4B0082]/30 to-[#000033]/90 md:from-[#000033]/60 md:via-[#4B0082]/20 md:to-[#000033]/100" />
         </div>
 
         {/* Content */}
@@ -210,63 +210,78 @@ export default function Hero() {
                   </button>
                 </motion.div>
 
-                {/* Feature Cards - Minimalistas e Compactos */}
+                {/* Feature Cards - Otimizados para Mobile */}
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 px-4 lg:px-0 max-w-4xl mx-auto"
+                  className="w-full max-w-5xl mx-auto px-4 lg:px-0"
                 >
-                  {/* Velocidade Card */}
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.0 }}
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-purple-400/30 hover:bg-purple-500/10 transition-all duration-300 cursor-pointer w-full sm:w-auto min-w-[160px] max-w-[200px]"
-                  >
-                    <div className="flex flex-col items-center text-center gap-2">
-                      <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center group-hover:bg-purple-500/30 transition-colors duration-300">
-                        <Rocket className="w-4 h-4 text-purple-400" />
+                  {/* Mobile: Cards em coluna única, Desktop: Cards em linha */}
+                  <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 sm:gap-6">
+                    {/* Velocidade Card */}
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 1.0 }}
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-5 hover:border-purple-400/50 hover:bg-purple-500/10 transition-all duration-300 cursor-pointer flex-1 hover:shadow-2xl hover:shadow-purple-500/10"
+                    >
+                      <div className="flex flex-col items-center text-center gap-3 sm:gap-2">
+                        <div className="w-12 h-12 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-500/30 to-purple-600/20 rounded-xl flex items-center justify-center group-hover:from-purple-500/40 group-hover:to-purple-600/30 transition-all duration-300 group-hover:scale-110">
+                          <Rocket className="w-6 h-6 sm:w-5 sm:h-5 text-purple-400 group-hover:text-purple-300" />
+                        </div>
+                        <h3 className="text-white font-bold text-lg sm:text-base group-hover:text-purple-200 transition-colors duration-300">
+                          Velocidade
+                        </h3>
+                        <p className="text-gray-300 text-sm sm:text-xs leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                          Entrega rápida com qualidade excepcional
+                        </p>
                       </div>
-                      <h3 className="text-white font-semibold text-sm">Velocidade</h3>
-                      <p className="text-gray-400 text-xs leading-relaxed">Entrega rápida com qualidade excepcional</p>
-                    </div>
-                  </motion.div>
+                    </motion.div>
 
-                  {/* Segurança Card */}
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.1 }}
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-blue-400/30 hover:bg-blue-500/10 transition-all duration-300 cursor-pointer w-full sm:w-auto min-w-[160px] max-w-[200px]"
-                  >
-                    <div className="flex flex-col items-center text-center gap-2">
-                      <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors duration-300">
-                        <Shield className="w-4 h-4 text-blue-400" />
+                    {/* Segurança Card */}
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 1.1 }}
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-5 hover:border-blue-400/50 hover:bg-blue-500/10 transition-all duration-300 cursor-pointer flex-1 hover:shadow-2xl hover:shadow-blue-500/10"
+                    >
+                      <div className="flex flex-col items-center text-center gap-3 sm:gap-2">
+                        <div className="w-12 h-12 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500/30 to-blue-600/20 rounded-xl flex items-center justify-center group-hover:from-blue-500/40 group-hover:to-blue-600/30 transition-all duration-300 group-hover:scale-110">
+                          <Shield className="w-6 h-6 sm:w-5 sm:h-5 text-blue-400 group-hover:text-blue-300" />
+                        </div>
+                        <h3 className="text-white font-bold text-lg sm:text-base group-hover:text-blue-200 transition-colors duration-300">
+                          Segurança
+                        </h3>
+                        <p className="text-gray-300 text-sm sm:text-xs leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                          Proteção total dos seus dados e sistemas
+                        </p>
                       </div>
-                      <h3 className="text-white font-semibold text-sm">Segurança</h3>
-                      <p className="text-gray-400 text-xs leading-relaxed">Proteção total dos seus dados e sistemas</p>
-                    </div>
-                  </motion.div>
+                    </motion.div>
 
-                  {/* Inovação Card */}
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.2 }}
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-emerald-400/30 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer w-full sm:w-auto min-w-[160px] max-w-[200px]"
-                  >
-                    <div className="flex flex-col items-center text-center gap-2">
-                      <div className="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center group-hover:bg-emerald-500/30 transition-colors duration-300">
-                        <Zap className="w-4 h-4 text-emerald-400" />
+                    {/* Inovação Card */}
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 1.2 }}
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-5 hover:border-emerald-400/50 hover:bg-emerald-500/10 transition-all duration-300 cursor-pointer flex-1 hover:shadow-2xl hover:shadow-emerald-500/10"
+                    >
+                      <div className="flex flex-col items-center text-center gap-3 sm:gap-2">
+                        <div className="w-12 h-12 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500/30 to-emerald-600/20 rounded-xl flex items-center justify-center group-hover:from-emerald-500/40 group-hover:to-emerald-600/30 transition-all duration-300 group-hover:scale-110">
+                          <Zap className="w-6 h-6 sm:w-5 sm:h-5 text-emerald-400 group-hover:text-emerald-300" />
+                        </div>
+                        <h3 className="text-white font-bold text-lg sm:text-base group-hover:text-emerald-200 transition-colors duration-300">
+                          Inovação
+                        </h3>
+                        <p className="text-gray-300 text-sm sm:text-xs leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                          Tecnologias de ponta para seu negócio
+                        </p>
                       </div>
-                      <h3 className="text-white font-semibold text-sm">Inovação</h3>
-                      <p className="text-gray-400 text-xs leading-relaxed">Tecnologias de ponta para seu negócio</p>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </div>
                 </motion.div>
               </motion.div>
             </div>
