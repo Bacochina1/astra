@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Spline from "@splinetool/react-spline/next"
-import { Phone, BookOpen, ArrowRight, Zap, Shield, Rocket } from "lucide-react"
-import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
+import Spline from "@splinetool/react-spline/next";
+import { Phone, BookOpen, ArrowRight, Zap, Shield, Rocket } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // StarBorder Component
 const StarBorder = ({
@@ -40,21 +40,21 @@ const StarBorder = ({
       ></div>
       <div className="inner-content">{children}</div>
     </Component>
-  )
-}
+  );
+};
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+      setIsMobile(window.innerWidth < 768);
+    };
 
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
-    return () => window.removeEventListener("resize", checkMobile)
-  }, [])
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <>
@@ -135,7 +135,10 @@ export default function Hero() {
       <div className="relative min-h-screen overflow-hidden bg-[#000033]">
         {/* Spline Background - Otimizado para Mobile */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <Spline className='' scene="https://prod.spline.design/EBeZQyvaIksy4qvx/scene.splinecode" />
+          <Spline
+            className=""
+            scene="https://prod.spline.design/EBeZQyvaIksy4qvx/scene.splinecode"
+          />
           {/* Enhanced overlay with gradient - Mais forte no mobile */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#000033]/100 via-[#4B0082]/30 to-[#000033]/90 md:from-[#000033]/60 md:via-[#4B0082]/20 md:to-[#000033]/100" />
         </div>
@@ -144,7 +147,11 @@ export default function Hero() {
         <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
           <div className="max-w-7xl mx-auto w-full">
             <div className="flex flex-col items-center text-center">
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
                 {/* Badge */}
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
@@ -153,7 +160,9 @@ export default function Hero() {
                   className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-6 md:mb-8 hover:bg-purple-500/30 transition-all duration-300"
                 >
                   <Zap className="w-3 h-3 md:w-4 md:h-4 text-purple-400" />
-                  <span className="text-purple-300 text-xs md:text-sm font-medium">Inovação Digital</span>
+                  <span className="text-purple-300 text-xs md:text-sm font-medium">
+                    Inovação Digital
+                  </span>
                 </motion.div>
 
                 {/* Main Heading - Responsivo */}
@@ -178,8 +187,8 @@ export default function Hero() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed font-light px-4 lg:px-0"
                 >
-                  Na Astrahus, combinamos estratégia, produto e tecnologia para impulsionar negócios com velocidade e
-                  segurança.
+                  Na Astrahus, combinamos estratégia, produto e tecnologia para
+                  impulsionar negócios com velocidade e segurança.
                 </motion.p>
 
                 {/* Enhanced CTA Buttons - Mobile First */}
@@ -297,5 +306,5 @@ export default function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none z-5" />
       </div>
     </>
-  )
+  );
 }
