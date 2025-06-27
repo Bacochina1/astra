@@ -119,7 +119,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <div className="relative min-h-screen overflow-hidden bg-[#000033]">
+      <div className="relative min-h-screen overflow-hidden max-lg:pb-28 bg-[#000033]">
         {/* Spline Background - Otimizado para Mobile */}
 
         <SplineAnim />
@@ -156,7 +156,7 @@ export default function Hero() {
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-white">
                     Escalamos produtos.
                   </span>
-                  <span className="block text-transparent tracking-normal bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 mt-1  font-bold">
+                  <span className="block text-transparent uppercase -tracking-wider bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 mt-1  font-bold">
                     Fortalecemos projetos.
                   </span>
                 </motion.h1>
