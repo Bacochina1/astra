@@ -3,6 +3,8 @@ import Hero from "./sections/HeroSection";
 import { Suspense } from "react";
 import Loading from "./sections/components/Loading";
 import AboutSection from "./sections/components/About";
+import ServicesSection from "./sections/components/Services";
+import CTASection from "./sections/components/Cta";
 
 export default function Home() {
   return (
@@ -12,6 +14,9 @@ export default function Home() {
         <Hero />
       </Suspense>
       <AboutSection />
+      <ServicesSection />
+      <CTASection />
+      {/* Add more sections as needed */}
     </div>
   );
 }
