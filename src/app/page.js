@@ -5,6 +5,7 @@ import Loading from "./sections/components/Loading";
 import AboutSection from "./sections/components/About";
 import ServicesSection from "./sections/components/Services";
 import CTASection from "./sections/components/Cta";
+import Footer from "./sections/components/Footer";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <CTASection />
-      {/* Add more sections as needed */}
+      <Footer />
     </div>
   );
 }

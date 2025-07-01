@@ -11,35 +11,35 @@ export default function ServicesSection() {
       title: "Auditoria técnica e de produto",
       description:
         "Identificamos riscos, gargalos e oportunidades na arquitetura, código e estratégia do seu produto. Entregamos um diagnóstico claro e um plano técnico para evoluir com confiança.",
-      image: "/auditoria.png",
+      image: "/auditoria-2.png",
     },
     {
       icon: TrendingUp,
       title: "Escalabilidade de produtos e MVPs",
       description:
         "Seu produto cresceu. Agora precisa de base sólida. Reestruturamos sistemas, stacks e processos para suportar tráfego, usuários e novas funcionalidades — com segurança e desempenho.",
-      image: "/scala.png",
+      image: "/mvp-2.png",
     },
     {
       icon: Zap,
       title: "Criação de MVPs estratégicos",
       description:
         "Da ideia à validação. Desenvolvemos MVPs rápidos, estáveis e prontos para rodar no mundo real. Foco em produto viável, validado e escalável.",
-      image: "/mvp.png",
+      image: "/criacao-1.png",
     },
     {
       icon: Monitor,
       title: "Desenvolvimento de produtos digitais",
       description:
         "Construímos plataformas robustas, modulares e integradas. UX, front, back, dados — tudo alinhado à visão de negócio.",
-      image: "/figma.png",
+      image: "/produtos.png",
     },
     {
       icon: Users,
       title: "Soluções para startups em crescimento",
       description:
         "Ajudamos startups e times técnicos a estruturarem seus produtos com base em boas práticas, foco em ROI e arquitetura escalável.",
-      image: "/analy.png",
+      image: "/digital.png",
     },
   ];
 

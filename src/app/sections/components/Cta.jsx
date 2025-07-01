@@ -6,9 +6,9 @@ import Image from "next/image"
 
 export default function CTASection() {
   return (
-    <div className="relative bg-gradient-to-b from-[#1a0d4a] via-[#000033] to-[#0a0a0a] py-16 lg:py-20 overflow-hidden">
+    <div className="relative bg-gradient-to-b from-[#1a0d4a] via-[#000033] to-[#1a0d4a] py-16 lg:py-20 overflow-hidden">
       {/* Background Elements */}
-      <Image src="/bg-4.png" alt="Background" width={0} height={0} className="w-full h-full absolute -z-0 object-left-top mix-blend-color-dodge opacity-50 "></Image>
+      <Image src="/bg-4.png" alt="Background" width={0} height={0} className="w-full h-full absolute -z-0 object-left-top mix-blend-color-dodge opacity-30 "></Image>
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/6 w-72 h-72 md:w-96 md:h-96 bg-purple-500/8 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/6 w-72 h-72 md:w-96 md:h-96 bg-blue-500/8 rounded-full blur-3xl" />
